@@ -42,7 +42,7 @@ autocmd FileType scheme nnoremap <buffer> <localleader>rc :SchemeConnect<cr>
 " Evaluates the outer most / top level form and jumps the cursor back to where it was.
 autocmd FileType scheme nnoremap <buffer> <localleader>re :normal cpaF<cr>``
 
-" Evaluate the entire file.
+" Evaluates the entire file.
 autocmd FileType scheme nnoremap <buffer> <localleader>rf :SchemeEval<cr>
 ```
 
