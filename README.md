@@ -33,7 +33,7 @@ The plugin defines the following things:
  * `cp{motion...}` evaluates the result of the motion, so `cpaf` is the current form your cursor is on.
  * `cpp` is a shorthand version of `cpaf`, can come in pretty handy.
 
-There's no other bindings but I define these in my own dotfiles, you may want them too. I didn't want to put them in by default since some people, understandably, hate that.
+There's no other bindings but I define these in my own [dotfiles][], you may want them too. I didn't want to put them in by default since some people, understandably, hate that.
 
 ```viml
 " Starts the REPL.
@@ -66,3 +66,4 @@ Do what you want. Learn as much as you can. Unlicense more software.
 [vim-sexp]: https://github.com/guns/vim-sexp
 [vim-fireplace]: https://github.com/tpope/vim-fireplace
 [vim-plug]: https://github.com/junegunn/vim-plug
+[dotfiles]: https://github.com/Olical/dotfiles
