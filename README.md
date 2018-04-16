@@ -65,3 +65,4 @@ Do what you want. Learn as much as you can. Unlicense more software.
 [sicp]: https://mitpress.mit.edu/sites/default/files/sicp/index.html
 [vim-sexp]: https://github.com/guns/vim-sexp
 [vim-fireplace]: https://github.com/tpope/vim-fireplace
+[vim-plug]: https://github.com/junegunn/vim-plug
