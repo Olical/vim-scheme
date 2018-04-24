@@ -1,12 +1,12 @@
 # vim-scheme
 
-> Warning: Currently depends on [vim-sexp][] for grabbing forms, you could quite easily change this yourself if it's a dealbreaker.
+> Warning: Currently depends on [vim-sexp][] for selecting forms.
 
 This plugin allows you to evaluate [Scheme][] from within your buffer. It delegates evaluation to an [mit-scheme][] REPL started by a Neovim `:terminal` command.
 
-> Note: There's no reason why this can't work with normal Vim as far as I know, it just probably needs a little tweaking. Feel free to give it a shot!
+> Note: There's no reason why this can't work with normal Vim as far as I know, it just needs a little tweaking. Pull requests are more than welcome.
 
-I wrote this tool to help me work through [SICP][], I thought I'd put it out there for use by other Lisp enthusiasts that can't (or won't) leave their beloved modal environment of choice.
+I wrote this tool to make working through [SICP][] easier, I thought I'd put it out there for use by other Lisp enthusiasts that can't (or won't) leave their beloved modal environment of choice.
 
 Since I'm a [Clojure][] developer by day (and night), I named the commands and bindings after [vim-fireplace][].
 
@@ -29,7 +29,6 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 The plugin defines the following things:
 
  * `:SchemeConnect` which starts a REPL in a terminal buffer.
- * `:SchemeEval` which takes a range (defaulting to the whole file), it sends the range to the REPL and executes it.
  * `cp{motion...}` evaluates the result of the motion, so `cpaf` is the current form your cursor is on.
  * `cpp` is a shorthand version of `cpaf`, can come in pretty handy.
 
@@ -40,13 +39,13 @@ There's no other bindings but I define these in my own [dotfiles][], you may wan
 autocmd FileType scheme nnoremap <buffer> <localleader>rc :SchemeConnect<cr>
 
 " Evaluates the outer most / top level form and jumps the cursor back to where it was.
-autocmd FileType scheme nnoremap <buffer> <localleader>re :normal cpaF<cr>``
+autocmd FileType scheme nnoremap <buffer> <localleader>re :normal mscpaF<cr>`s
 
 " Evaluates the entire file.
-autocmd FileType scheme nnoremap <buffer> <localleader>rf :SchemeEval<cr>
+autocmd FileType scheme nnoremap <buffer> <localleader>rf :normal msggcpG<cr>`s
 ```
 
-I set my local leader to comma, so I would press `,re` to evaluate my current outermost form.
+I set my local leader to comma, so I would press `,re` to evaluate my current outermost form. Note my usage of the `s` mark to jump back to the original location, if you rely on marks a lot that could trip you up.
 
 ## Unlicenced
 
