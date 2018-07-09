@@ -47,6 +47,14 @@ autocmd FileType scheme nnoremap <buffer> <localleader>rf :normal msggcpG<cr>`s
 
 I set my local leader to comma, so I would press `,re` to evaluate my current outermost form. Note my usage of the `s` mark to jump back to the original location, if you rely on marks a lot that could trip you up.
 
+## Configuration
+
+You may set `g:scheme_split_size` to change the size of the terminal that's created when you connect.
+
+```viml
+let g:scheme_split_size = -10
+```
+
 ## Unlicenced
 
 Find the full [unlicense][] in the `UNLICENSE` file, but here's a snippet.
