@@ -55,6 +55,14 @@ You may set `g:scheme_split_size` to change the size of the terminal that's crea
 let g:scheme_split_size = -10
 ```
 
+Thanks to [@markx][] you can set `g:scheme_executable` to change the name of the Scheme you wish to work with. If you'd like to work with Racket, for example, you can use this.
+
+```
+let g:scheme_executable = "racket"
+```
+
+The plugin mappings are currently set up for `scheme` or `racket` by default, you may have to pull request in more if you'd like to use them with another filetype.
+
 ## Unlicenced
 
 Find the full [unlicense][] in the `UNLICENSE` file, but here's a snippet.
@@ -74,3 +82,4 @@ Do what you want. Learn as much as you can. Unlicense more software.
 [vim-fireplace]: https://github.com/tpope/vim-fireplace
 [vim-plug]: https://github.com/junegunn/vim-plug
 [dotfiles]: https://github.com/Olical/dotfiles
+[@markx]: https://github.com/markx
