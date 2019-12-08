@@ -57,7 +57,7 @@ let g:scheme_split_size = -10
 
 Thanks to [@markx][] you can set `g:scheme_executable` to change the name of the Scheme you wish to work with. If you'd like to work with Racket, for example, you can use this.
 
-```
+```viml
 let g:scheme_executable = "racket"
 ```
 
