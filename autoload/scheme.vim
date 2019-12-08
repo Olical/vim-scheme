@@ -1,6 +1,11 @@
 function! scheme#connect()
   new
-  let s:repl_term_id = termopen('mit-scheme')
+
+  if !exists('g:scheme_executable')
+    let g:scheme_executable = "mit-scheme"
+  endif
+
+  let s:repl_term_id = termopen(g:scheme_executable)
 
   if g:scheme_split_size != "default"
     silent execute "resize " . g:scheme_split_size
