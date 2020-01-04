@@ -1,11 +1,14 @@
 function! scheme#connect()
-  new
-
   if !exists('g:scheme_executable')
     let g:scheme_executable = "mit-scheme"
   endif
 
-  let s:repl_term_id = termopen(g:scheme_executable)
+  if has('nvim')
+    new
+    let s:repl_term_id = termopen(g:scheme_executable)
+  else
+    let s:repl_term_id = term_start(g:scheme_executable)
+  endif
 
   if g:scheme_split_size != "default"
     silent execute "resize " . g:scheme_split_size
@@ -29,9 +32,16 @@ function! scheme#eval(type)
     silent exe "normal! `[v`]y"
   endif
 
-  call jobsend(s:repl_term_id, @@ . "\n")
+  if !exists('s:repl_term_id')
+    call scheme#connect()
+  end
+
+  if has("nvim")
+    call jobsend(s:repl_term_id, @@ . "\n")
+  else
+    call term_sendkeys(s:repl_term_id, @@ . "\n")
+  end
 
   let &selection = sel_save
   let @@ = reg_save
 endfunction
-
