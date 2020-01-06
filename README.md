@@ -2,9 +2,7 @@
 
 > Warning: Currently depends on [vim-sexp][] for selecting forms.
 
-This plugin allows you to evaluate [Scheme][] from within your buffer. It delegates evaluation to an [mit-scheme][] REPL started by a Neovim `:terminal` command.
-
-> Note: There's no reason why this can't work with normal Vim as far as I know, it just needs a little tweaking. Pull requests are more than welcome.
+This plugin allows you to evaluate [Scheme][] from within your buffer. It delegates evaluation to an [mit-scheme][] REPL started by a Vim/Neovim `:terminal` command.
 
 I wrote this tool to make working through [SICP][] easier, I thought I'd put it out there for use by other Lisp enthusiasts that can't (or won't) leave their beloved modal environment of choice.
 
