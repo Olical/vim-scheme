@@ -45,3 +45,11 @@ function! scheme#eval(type)
   let &selection = sel_save
   let @@ = reg_save
 endfunction
+
+function! scheme#restart()
+  if has("nvim")
+    call jobsend(s:repl_term_id, "(RESTART 1)\n")
+  else
+    call term_sendkeys(s:repl_term_id, "(RESTART 1)\n")
+  end
+endfunction
