@@ -29,21 +29,12 @@ The plugin defines the following things:
  * `:SchemeConnect` which starts a REPL in a terminal buffer.
  * `cp{motion...}` evaluates the result of the motion, so `cpaf` is the current form your cursor is on.
  * `cpp` is a shorthand version of `cpaf`, can come in pretty handy.
+ * `<localleader>rc` is bound to `SchemeConnect`.
+ * `<localleader>rr` issues a restart, great for getting out of an error state.
+ * `<localleader>re` evaluates the outer most / top level form and jumps the cursor back to where it was.
+ * `<localleader>rf` evaluates the entire file and jumps the cursor back to where it was.
 
-There's no other bindings but I define these in my own [dotfiles][], you may want them too. I didn't want to put them in by default since some people, understandably, hate that.
-
-```viml
-" Starts the REPL.
-autocmd FileType scheme nnoremap <buffer> <localleader>rc :SchemeConnect<cr>
-
-" Evaluates the outer most / top level form and jumps the cursor back to where it was.
-autocmd FileType scheme nnoremap <buffer> <localleader>re :normal mscpaF<cr>`s
-
-" Evaluates the entire file.
-autocmd FileType scheme nnoremap <buffer> <localleader>rf :normal msggcpG<cr>`s
-```
-
-I set my local leader to comma, so I would press `,re` to evaluate my current outermost form. Note my usage of the `s` mark to jump back to the original location, if you rely on marks a lot that could trip you up.
+> Note: The `re` and `rf` mappings use the `s` mark for jumping back to where your cursor was at the time of the evaluation. As long as you're not using the `s` mark for anything you shouldn't notice. This can be remapped or even improved in a PR.
 
 ## Configuration
 
