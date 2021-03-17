@@ -1,5 +1,29 @@
 # vim-scheme
 
+## Deprecation!
+
+Hello, intrepid Lisper! You've stumbled into a project I started around 2018 which has since been completely superseded!
+
+You should use [Conjure](https://github.com/Olical/conjure) instead, it's the descendent of this project and is _far_ more advanced. It (at the time of writing) has support for the following languages with more to come:
+
+ * Clojure + ClojureScript
+ * Fennel
+ * Janet
+ * Hy
+ * MIT Scheme
+ * Guile
+ * Racket
+
+It's built in Fennel, a Lisp compiled to Lua, using [Aniseed](https://github.com/Olical/aniseed) and it's actively maintained. I promise that Conjure's UX will make working with MIT Scheme so much more pleasant.
+
+If that hasn't convinced you, please do continue to read, this plugin still works (I think), but I think you'll love Conjure.
+
+Regardless, have a great day!
+
+@Olical
+
+## Introduction
+
 > Warning: Currently depends on [vim-sexp][] for selecting forms.
 
 This plugin allows you to evaluate [Scheme][] from within your buffer. It delegates evaluation to an [mit-scheme][] REPL started by a Vim/Neovim `:terminal` command.
